@@ -433,10 +433,9 @@ function sendMsgTo(text) {
  */
 function main(){
   var ninaData = getSysAdapterNative(ninaAdapter, ninaAdapterInstance);
-  var ninaAgsArr = ninaData.agsArray.split(',').map(item=>item.trim());{
-    for (const ags of ninaAgsArr){
-        processMessagesForAgs(ags);
-    }
+  var ninaAgsArr = ninaData.agsArray.split(',').map(item=>item.trim());
+  for (const ags of ninaAgsArr){
+    processMessagesForAgs(ags);
   }
 }
 
