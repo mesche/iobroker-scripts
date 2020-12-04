@@ -1,7 +1,7 @@
 //
 //===================================================================
 //	                NINA - Messages - Eventhandler
-//		                -- VERSION 0.1.0  --
+//		                -- VERSION 0.1.1  --
 //
 // This script iterates over the data which have been provided by the ioBroker.nina adapter.
 // The prepared messages can be processed to other systems (e.g. pushover, telegram...)
@@ -322,15 +322,20 @@ function processMessagesForAgs(ags) {
   if(!mgsSendList){ 
     mgsSendList = [];
   }
+
+  var msgSendlListSizeOld = mgsSendList.length;
   
   // TODO maybe better load all data at once
   // $(idWarningBase + '*').each(function(id, i) {debug(id);});
   for (var idx=1; idx <= numberOfWarnings; idx++ ) {
-    var idWarning = idWarningBase + ((idx == 1) ? '0' : '') + idx;
+    var idWarning = idWarningBase + ((idx < 10) ? '0' : '') + idx;
     
     var msgId = stVal(idWarning + '.identifier');
-    
-    if(isFirstAgsRun && noSendOnFirstAgsRun) {
+
+    if(!msgId) {
+        log('WARN: Message without ID for AGS ' + agsName + ' - Ignore it and skip!', 'warn');
+        continue;
+    }else if (isFirstAgsRun && noSendOnFirstAgsRun) {
         mgsSendList.push(msgId);
         debug('First run for AGS ' + agsName + ' - Do not send the message');
         continue;
@@ -365,7 +370,10 @@ function processMessagesForAgs(ags) {
     sendMsgTo(msgText);
   }
 
-  writeConfigAgsMsgsSend(ags, mgsSendList);
+  // Only write config if send list was modified.
+  if(mgsSendList.length !== msgSendlListSizeOld) { 
+    writeConfigAgsMsgsSend(ags, mgsSendList);
+  }
 }
 
 /**
@@ -417,12 +425,13 @@ function writeConfigAgsMsgsSend(ags, agsMgsSendList) {
  */
 function sendMsgTo(text) {
     debug('Send: ' + text);
+
     if(sendToPushover){
         sendTo('pushover', text);
     }
 
     if(sendToTelegram) {
-        sendTo('telegram', {user: sendToTelegramUser, text: text});
+       sendTo('telegram', {user: sendToTelegramUser, text: text});
     }
 }
 
