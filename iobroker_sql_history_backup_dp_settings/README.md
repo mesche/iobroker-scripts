@@ -6,7 +6,7 @@
 
 ## Scripts
 
-* [iobroker_sql_history_backup_backup_dp_settings.js](iobroker_sql_history_backup_backup_dp_settings.js) - Backup script to store data point SQL-History adapter settings
+* [iobroker_sql_history_backup_dp_settings.js](iobroker_sql_history_backup_dp_settings.js) - Backup script to store data point SQL-History adapter settings
 * [iobroker_sql_history_backup_restore_dp_settings.js](iobroker_sql_history_backup_restore_dp_settings.js) - Restore script to restore data point SQL-History adapter settings
 
 
