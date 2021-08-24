@@ -15,6 +15,10 @@
  * Adapter - ioBroker.javascript - https://github.com/iobroker/ioBroker.javascript
 
 
+## Links
+ * [SQL-History Adapter – Einstellungen der Datenpunkte sichern/wiederherstellen](https://www.blogging-it.com/sql-history-adapter-einstellungen-der-datenpunkte-sichern-wiederherstellen/hausautomatisierung-smart-home/iobroker/skripte-und-logiken.html)
+
+
 ## Contributing
 
 Please submit all pull requests against the master branch. If your code contains new code, patches or features, you should include relevant unit tests.
