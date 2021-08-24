@@ -18,6 +18,7 @@
 // Prerequisites
 // ------------- 
 // Adapter - ioBroker.sql - https://github.com/ioBroker/ioBroker.sql
+// Adapter - ioBroker.javascript - https://github.com/iobroker/ioBroker.javascript
 //
 //
 //    ::::::::::::::: www.blogging-it.com :::::::::::::::
