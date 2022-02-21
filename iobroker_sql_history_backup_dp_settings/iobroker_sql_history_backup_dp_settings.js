@@ -2,7 +2,7 @@
 //===================================================================
 //	                 IOBROKER - SQL-HISTORY ADAPTER
 //                       DATA POINT - SETTINGS
-//                              RESTORE
+//                              BACKUP
 //		                  -- VERSION 0.1.0 --
 //
 // This script reads the SQL-History adapter settings of all data points where the SQL-History adapter 
