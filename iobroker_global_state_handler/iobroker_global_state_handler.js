@@ -8,6 +8,10 @@
 // It is useful if multiple setState commands are triggered in a short time.
 // A global queue is used to execute multiple setState commands synchronously.
 // 
+// Blog
+// ------------- 
+// https://www.blogging-it.com/setstate-synchrone-verarbeitung-der-iobroker-homematic-rpc-adapter-befehle-via-bin-rpc-xml-rpc-um-probleme-bei-der-kommunikation-zu-vermeiden/hausautomatisierung-smart-home/iobroker/skripte-und-logiken.html 
+//
 //
 // Prerequisites
 // ------------- 
