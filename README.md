@@ -1,2 +1,2 @@
 # iobroker-scripts
- This repository contains scrips tfor ioBroker Smarthome
+ This repository contains scripts and snippets for the ioBroker IoT platform.
